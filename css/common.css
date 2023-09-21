@@ -1,0 +1,318 @@
+@charset "utf-8";
+
+/* 폰트연결 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+
+/* 💛초기화영역💛 */
+* {
+    line-height: 1;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+body {
+    color: #222;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+html, body {
+    font-size: 62.5%;
+}
+.inner {
+    max-width: 1820px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+}
+h3 {
+    font-size: 37px;
+}
+
+/* 💛header💛 */
+.table,.mobile {display: none;}
+header {
+    width: 100%;
+    position: relative;
+}
+.header_top {
+    border-bottom: 1px solid #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.text_ani {
+    display: flex;
+    overflow: hidden;
+    padding: 13px 0;
+}
+.text_ani p {
+    font-size: 14px;
+    white-space: nowrap;
+    margin-right: 20px;
+    animation: textani 10s infinite linear;
+}
+@keyframes textani {
+    0% {
+       transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+.header_top .header_right {
+    height: 43px;
+    background-color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2.6%;
+    border-left: 1px solid #222;
+}
+.header_top .header_right a {
+    margin-left: 20px;
+    display: block;
+}
+header .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 17px 0;
+}
+header .inner div {
+    display: flex;
+}
+header .inner::before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #222;
+    position: absolute;
+    top: 116px;
+    left: 0;
+}
+header .inner h1 {
+    height: 35px; 
+    margin-right: 70px;
+}
+header .inner h1 img {
+    height: 100%;
+    object-fit: cover;
+}
+.depth01 {
+    display: flex;
+}
+.depth01 li {
+    margin-right: 38px;
+}
+.depth01 li:last-child {
+    text-align: right;
+}
+.depth01 li a {
+    display: block;
+    font-size: 38px;
+    font-weight: 400;
+}
+.header_bag {
+    font-size: 38px;
+    font-weight: 400;
+}
+.pc_gnb .gnb {
+    display: none;
+    align-items: center;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #222;
+    position: absolute;
+    top: 117px;
+    left: 0;
+    z-index: 10;
+    padding: 25px 50px;
+}
+.pc_gnb .gnb.on {display: flex;}
+.pc_gnb figure {
+    width: 200px;
+    height: 300px;
+    background-color: #222;
+    margin-right: 25px;
+}
+.pc_gnb figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.pc_gnb .depth02 {
+    width: 430px;
+    height: 300px;
+    /* padding-top: 20px; */
+    margin-right: 90px;
+}
+.pc_gnb .depth02 li {
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+.pc_gnb .depth02 li a {
+    display: block;
+}
+.pc_gnb .depth02 li.view {
+    font-size: 14px;
+    font-weight: 700;
+    text-align: right;
+}
+.pc_gnb .depth02 li.view a {
+    display: inline;
+}
+.pc_gnb .depth02 li:hover {
+    font-weight: 700;
+}
+.pc_gnb .depth02 li:last-child {
+    margin-bottom: 0;
+}
+
+/* tablet 사이즈 960*720 */
+@media screen and (max-width:960px) {
+    .pc {display: none;}
+    .table, .mobile {display: block;}
+
+    /* 💛header💛 */
+    header {
+        width: 100%;
+    }
+    header .inner {
+        max-width: 960px;
+        width: calc(100% - 40px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 0;
+    }
+    header .inner::before {
+        top: 47px;
+    }
+    header .inner > a {
+        font-size: 16px;
+    }
+    header .inner h1 {
+        height: 20px;
+        margin-right: 0;
+    }
+    header .inner > div img {
+        height: 100%;
+    }
+    .table_nav {
+        width: 100%;
+        height: calc(100vh - 48px);
+        position: absolute;
+        top: 48px;
+        left: 0;
+        z-index: 10;
+        background-color: #fff;
+        display: none;
+    }
+    .table_nav.on {
+        display: block;
+    }
+    .table_text_ani {
+        width: 100%;
+        padding: 5px 0;
+        position: relative;
+        overflow: hidden;
+    }
+    .table_text_ani::before {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: #222;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .text_ani p {
+        font-size: 12px;
+    }
+    .table_gnb {
+        display: flex;
+        flex-direction: column;
+    }
+    .nav_inner {
+        max-width: 960px;
+        width: calc(100% - 40px);
+        margin: 0 auto;
+    }
+    .table_gnb {
+        width: 100%;
+    }
+    .table_gnb .depth01 {
+        display: block;
+    }
+    .table_gnb .depth01 > a {
+        width: 100%;
+        font-size: 20px;
+        padding: 12px 0;
+        display: block;
+        padding-left: 20px;
+        border-bottom: 1px solid #222;
+    }
+    .table_gnb .depth02 {
+        border-bottom: 1px solid #222;
+        padding: 20px 0 ;
+        position: relative;
+        display: none;
+    }
+    .table_gnb .depth02.on {
+        display: block;
+    }
+    .table_gnb .depth02 li {
+        margin-bottom: 14px;
+    }
+    .table_gnb .depth02 li a {
+        margin-left: 40px;
+        font-size: 16px;
+    }
+    .table_gnb .depth02 li.view {
+        position: absolute;
+        top: 20px;
+        right: -20px;
+    }
+    .table_gnb .depth02 li.view a {
+        font-size: 14px;
+        font-weight: 700;
+    }
+    .nav_bottom {
+        width: 100%;
+        height: 40px;
+        border-bottom: 1px solid #222;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav_bottom li {
+        width: 50%;
+        height: 100%;
+        font-size: 12px;
+        padding-left: 20px;
+        line-height: 40px;
+    }
+    .nav_bottom li:first-child {
+        background-color: #222;
+        color: #fff;
+    }
+    
+}
+
+/* mobile 사이즈 414*896 */
+@media screen and (max-width:414px) {
+    .inner {
+        max-width: 394px;
+        width: calc(100% - 20px);
+    }
+    header .inner {
+        max-width: 394px;
+        width: calc(100% - 20px);
+    }
+    .main_visual {
+        height: calc(100vh - 48px);
+    }
+    .main_visual .inner {
+        width: calc(100% - 20px);
+    }
+}
